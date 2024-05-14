@@ -173,10 +173,10 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'fourth-chapter',
+            id: 'foufinal-splash',
             alignment: 'fully',
             hidden: false,
-            title: 'Third Title',
+            title: 'New Yorks Energy Future',
             image: 'https://www.caldwellmarine.com/wp-content/uploads/2016/01/cmi-chpe-cable-lay.jpg',
             description: 'Copy these sections to add to your story.',
             location: {
