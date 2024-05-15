@@ -2,8 +2,7 @@
 var config = {
     style: 'mapbox://styles/nw2257/clvojdept04la01pe9y0sciq7',
     accessToken: 'pk.eyJ1IjoibncyMjU3IiwiYSI6ImNsdXU4emozMzA3ZHoyam11Zmx6NWxqajcifQ._r9IkgwnilyVDH2Mh6MEzg',
-    showMarkers: true,
-    markerColor: '#3FB1CE',
+
     //projection: 'equirectangular',
     //Read more about available projections here
     //https://docs.mapbox.com/mapbox-gl-js/example/projections/
@@ -47,8 +46,38 @@ var config = {
             ]
         },
         {
-            id: 'quebec-station',
+            id: 'quebec-power',
             alignment: 'right',
+            hidden: false,
+            title: 'Hydro Quebec',
+            image: '',
+            description: 'The largest hydropower network in North America',
+            location: {
+                center: [-67.98091659184166, 48.78228285117775],
+                zoom: 5,
+                pitch: 15,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 1,
+                //     duration: 5000
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'layer-name',
+                //     opacity: 0
+                // }
+            ]
+        },
+        {
+            id: 'hertel-station',
+            alignment: 'left',
             hidden: false,
             title: 'Hertel Substation',
             image: 'https://www.hydroquebec.com/themes/projets/interconnexion-hertel-new-york/images/travaux/2021-225-004.jpg',
@@ -173,14 +202,14 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'foufinal-splashrth-chapter',
+            id: 'final-splash',
             alignment: 'fully',
             hidden: false,
             title: 'New Yorks Energy Future',
             image: 'https://www.caldwellmarine.com/wp-content/uploads/2016/01/cmi-chpe-cable-lay.jpg',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [-73.81555790391995, 42.74982891965341],
+                center: [-76.11168377958322, 43.090605896264876,],
                 zoom: 6.5,
                 pitch: 0,
                 bearing: 0
@@ -222,5 +251,18 @@ window.addEventListener('scroll', hideScrollPrompt);
   // Initialize the idle timer when the page loads
   resetIdleTimer();
 
-
+// creating popup//
+const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+    'Construction on the Astoria Converter began in 2023.'
+    );
+    
+    // create DOM element for the marker
+    const el = document.createElement('div');
+    el.id = 'marker';
+    
+    // create the marker
+    new mapboxgl.Marker(el)
+    .setLngLat(astoriaplant)
+    .setPopup(popup) // sets a popup on this marker
+    .addTo(map);
   

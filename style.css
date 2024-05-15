@@ -50,10 +50,28 @@ a, a:hover, a:visited {
     position: relative;
     z-index: 5;
 }
-#header h1, #header h2, #header p {
+
+#header h1 {
     margin: 0;
     padding: 2vh 2vw;
     text-align: center;
+    color: steelblue;
+    font: garamond;
+    font-size:40px;
+    
+
+}
+#header h2{
+    margin: 0;
+    padding: 2vh 2vw;
+    text-align: center;
+    
+}
+#header p {
+    margin: 0;
+    padding: 2vh 2vw;
+    text-align: center;
+    
 }
 #footer {
     width: 100%;
@@ -62,7 +80,7 @@ a, a:hover, a:visited {
     padding-bottom: 2vh;
     text-align: center;
     line-height: 25px;
-    font-size: 13px;
+    font-size: 12px;
     position: relative;
     z-index: 5;
 }
@@ -123,6 +141,21 @@ a, a:hover, a:visited {
     }
 }
 
+#marker {
+    background-image: url('https://qns.com/wp-content/uploads/2023/09/Converter-Site-Rendering-1-700x460.png');
+    border: 10px;
+    background-size: cover;
+    width: 75px;
+    height: 75px;
+    border-width: 10px;
+    border-radius: 100%;
+    border-color: whitesmoke;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
 /* Fix issue on mobile browser where scroll breaks  */
 .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
 .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
