@@ -198,7 +198,10 @@
 
             map.addSource('hydro', {
                 'type': 'geojson',
-                'data': 
+            'data': {
+                'type': 'FeatureCollection',
+                'features': [
+                    
                     {
                     'type': 'Feature',
                     'geometry': {
@@ -346,9 +349,10 @@
                         "type": "Point",
                         "coordinates": [-74.6844, 45.774]
                     }
-                }
-        );
-            });
+                    }
+                ]
+            }
+        });
 
         map.addLayer({
             id: 'hydro',
