@@ -32,6 +32,18 @@ a, a:hover, a:visited {
         display: none;
     }
 }
+.scroll-prompt {
+    position: fixed;
+    right: 30%;
+    bottom: 20px;
+    text-align: center;
+    background-color: #fff; /* White background */
+    color: steelblue;
+    padding: 8px; /* Add padding for better visibility */
+    border-radius: 4px; /* Optional: rounded corners for better aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    font-size: 22px; /* Smaller font size */
+}
 #header {
     margin: auto;
     width: 100%;

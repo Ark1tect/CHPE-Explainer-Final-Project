@@ -193,3 +193,34 @@ var config = {
         }
     ]
 };
+function hideScrollPrompt() {
+    document.querySelector('.scroll-prompt').style.display = 'none';
+}
+
+// Attach event listener to hide scroll prompt on scroll
+window.addEventListener('scroll', hideScrollPrompt);
+  // Setup an idle timer variable
+  let idleTimer;
+  function resetIdleTimer() {
+      // Clear existing timer
+      clearTimeout(idleTimer);
+
+      // Set a new timer
+      idleTimer = setTimeout(function () {
+          // Check if the user has scrolled to the bottom of the page already
+          if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) {
+              document.querySelector('.scroll-prompt').style.display = 'block'; // Show scroll prompt
+          }
+      }, 120000); // 120000 milliseconds = 2 minutes
+  }
+
+  // Listen for various user actions to reset the idle timer
+  window.addEventListener('mousemove', resetIdleTimer);
+  window.addEventListener('keypress', resetIdleTimer);
+  window.addEventListener('scroll', resetIdleTimer);
+
+  // Initialize the idle timer when the page loads
+  resetIdleTimer();
+
+
+  
